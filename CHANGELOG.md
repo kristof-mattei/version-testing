@@ -1,14 +1,18 @@
 <!-- header goes here -->
-## [unreleased]
-
-### ⚙️ Miscellaneous Tasks
-
-- *(release)* Release v2.2.2-alpha.2 
 ## [2.2.2-alpha.2](https://github.com/kristof-mattei/rust-testbench/compare/v2.2.2-alpha.1..v2.2.2-alpha.2) - 2026-03-03
 
 ### 🐛 Bug Fixes
 
 - If commit by @kristof-mattei ([`2f9603e`](https://github.com/kristof-mattei/rust-testbench/commit/2f9603ef5b34666b6aa37b572d268ffd4ce7198d))
+- Restore by @kristof-mattei ([`fc02d74`](https://github.com/kristof-mattei/rust-testbench/commit/fc02d746d8d80ce96e03ab9feecf3602c6ed832e))
+- Don't render commit id if it doesn't exist yet by @kristof-mattei ([`3528d32`](https://github.com/kristof-mattei/rust-testbench/commit/3528d32c7ccb599a9611741fb36736298b36ffde))
+- Disable pre-release by @kristof-mattei ([`79d7dd0`](https://github.com/kristof-mattei/rust-testbench/commit/79d7dd0d0b7dea0e7e5fa1a737e845dea6caa14a))
+- Set default to `none` by @kristof-mattei ([`8f01df9`](https://github.com/kristof-mattei/rust-testbench/commit/8f01df921bd091f5230f2721a078de8981ee8265))
+- Fix trailing spaces by @kristof-mattei ([`9341634`](https://github.com/kristof-mattei/rust-testbench/commit/934163416392000dddfdea80a3cdb1e7156acb47))
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Release v2.2.2
 ## [2.2.2-alpha.1](https://github.com/kristof-mattei/rust-testbench/compare/v2.2.1..v2.2.2-alpha.1) - 2026-03-03
 
 ### 🐛 Bug Fixes
