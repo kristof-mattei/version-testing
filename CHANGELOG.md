@@ -1,4 +1,17 @@
 <!-- header goes here -->
+## [2.4.0](https://github.com/kristof-mattei/rust-testbench/compare/v2.3.0..v2.4.0) - 2026-03-12
+
+### 🚀 Features
+
+- Remove crane by @kristof-mattei ([`073ba68`](https://github.com/kristof-mattei/rust-testbench/commit/073ba68f70d54c2adebaa489958e9527f20b6c9f))
+- Skip unneeded work by @kristof-mattei ([`e855cdc`](https://github.com/kristof-mattei/rust-testbench/commit/e855cdcac08c87f06d8380f2a449e9c97b72597b))
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Release v2.4.0
+- Use trixie as dev image by @kristof-mattei ([`caa35f4`](https://github.com/kristof-mattei/rust-testbench/commit/caa35f407f67a6bf86e45f83735ec9a5d31df207))
+- Devcontainer mold by @kristof-mattei ([`d4a14c0`](https://github.com/kristof-mattei/rust-testbench/commit/d4a14c05f92ed61bad93d07ce0ab095b282d0111))
+- Codeql must be done by @kristof-mattei ([`4c7c987`](https://github.com/kristof-mattei/rust-testbench/commit/4c7c98730008af1914e5fd335ff1e0af887214fa))
 ## [2.3.0](https://github.com/kristof-mattei/rust-testbench/compare/v2.2.2..v2.3.0) - 2026-03-11
 
 ### 🚀 Features
@@ -9,7 +22,7 @@
 
 - *(ci)* Allow empty by @kristof-mattei ([`e6ce7fb`](https://github.com/kristof-mattei/rust-testbench/commit/e6ce7fbb2a3ceb423c1c822dca92049f70f43ea2))
 - *(ci)* Comment cleanup by @kristof-mattei ([`4fa99d9`](https://github.com/kristof-mattei/rust-testbench/commit/4fa99d9cace57656b0c725fa995cbf85cedd07b4))
-- *(release)* Release v2.3.0
+- *(release)* Release v2.3.0 by @github-actions[bot] ([`dc76b68`](https://github.com/kristof-mattei/rust-testbench/commit/dc76b68e8727a69620a99bb707cafaeca07d78c1))
 - Clean up ignore by @kristof-mattei ([`404a01e`](https://github.com/kristof-mattei/rust-testbench/commit/404a01e12c18e72240ce1f85a49ee6aa8fc9e403))
 - Rust 1.94.0 Docker by @kristof-mattei ([`9427eb1`](https://github.com/kristof-mattei/rust-testbench/commit/9427eb18b46bf01da1357e3d83312f0846aa42ae))
 - Pin sha for Rust image by @kristof-mattei ([`e2986db`](https://github.com/kristof-mattei/rust-testbench/commit/e2986db43914999be69f279056fd5be0908f7216))
