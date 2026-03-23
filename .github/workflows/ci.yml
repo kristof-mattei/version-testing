@@ -156,8 +156,7 @@ jobs:
     steps:
       - *checkout
 
-      - &set_up_mold
-        name: Set up mold
+      - name: Set up mold
         uses: rui314/setup-mold@725a8794d15fc7563f59595bd9556495c0564878 # v1
 
       - name: Cache cargo
@@ -178,8 +177,7 @@ jobs:
             ${{ runner.os }}-${{ runner.arch }}-build-${{ env.CACHE_NAME }}-${{ hashFiles('Cargo.lock') }}-
             ${{ runner.os }}-${{ runner.arch }}-build-${{ env.CACHE_NAME }}-
 
-      - &set_up_toolchain
-        name: Set up toolchain
+      - name: Set up toolchain
         shell: bash
         run: |
           rm ${HOME}/.cargo/bin/cargo-fmt
@@ -348,6 +346,7 @@ jobs:
         if: fromJSON(steps.setup_qemu.outputs.setup_qemu) == true
         with:
           platforms: linux/${{ matrix.platform }}
+          cache-image: false
 
       - name: Extract Docker metadata
         uses: docker/metadata-action@030e881283bb7a6894de51c315a6bfe6a94e05cf # v6.0.0
@@ -475,6 +474,7 @@ jobs:
         if: fromJSON(steps.setup_qemu.outputs.setup_qemu) == true
         with:
           platforms: linux/${{ matrix.platform }}
+          cache-image: false
 
       - name: Build Docker image (populate registry cache)
         uses: docker/build-push-action@d08e5c354a6adb9ed34480a06d141179aa583294 # v7.0.0
