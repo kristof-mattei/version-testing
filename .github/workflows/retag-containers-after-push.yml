@@ -2,20 +2,17 @@
 name: Retag containers after new push / PR
 
 on:
-  # Triggers the workflow pushes to main. They can be either direct pushes, or PRs being merged
+  # Primary: fires when a PR is merged; base/head SHAs are directly available
+  # in the event payload, no git gymnastics needed
+  pull_request:
+    types:
+      - closed
+
+  # Fallback: catches direct pushes to main (no PR); uses git rev-parse HEAD^2
+  # to recover the incoming PR head commit
   push:
     branches:
       - main
-
-  # note how we're not doing
-  # pull_request_target, as it isn't what we need.
-  # we need the push event to make it show up nicely in the UI
-  # this however brings a whole new slew of problems, like how do we identify the
-  # incoming PR's artifacts?
-  # well, we set a tag on that PR's artifact, in the form of
-  # pr-{head_of_pr}-{pr_head_of_main}
-  # when with git rev-parse HEAD^2 we can find the incoming PR's head
-  # Problem solved
 
 concurrency:
   group: "${{ github.workflow }}" # last one must win
@@ -55,7 +52,11 @@ jobs:
     needs:
       - repo-has-container
     if: |
-      fromJSON(needs.repo-has-container.outputs.has_container) == true
+      fromJSON(needs.repo-has-container.outputs.has_container) == true &&
+      (
+        (github.event_name == 'pull_request' && github.event.pull_request.merged == true) ||
+        github.event_name == 'push'
+      )
     steps:
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -63,22 +64,28 @@ jobs:
           show-progress: false
           fetch-depth: 2
 
-      - name: Find out if current commit is a merge
+      - name: Resolve base and PR head SHAs
         shell: bash
         run: |
-          exit_code=0
-          # a commit always has a parent, but if it has 2, the commit is a merge
-          # so lets see if we have one
-          # since we're listening to the push event we have to do this manually
-          parent2=$(git rev-parse "HEAD^2" --quiet 2>/dev/null) || exit_code=$?
-
-          if [ ${exit_code} -eq 0 ]
+          if [ "${{ github.event_name }}" == "pull_request" ]
           then
-            echo "The head of the incoming PR is ${parent2}"
-            echo "INCOMING_PR_HEAD_COMMIT=${parent2}" >> "${GITHUB_ENV}"
-
+            # SHAs are directly available in the event payload
+            echo "BASE_SHA=${{ github.event.pull_request.base.sha }}" >> "${GITHUB_ENV}"
+            echo "INCOMING_PR_HEAD_COMMIT=${{ github.event.pull_request.head.sha }}" >> "${GITHUB_ENV}"
           else
-            echo "The incoming push isn't a merge, ergo it's not a PR"
+            # push event, HEAD^2 is the tip of the incoming PR branch
+            echo "BASE_SHA=${{ github.event.before }}" >> "${GITHUB_ENV}"
+
+            exit_code=0
+            parent2=$(git rev-parse "HEAD^2" --quiet 2>/dev/null) || exit_code=$?
+
+            if [ ${exit_code} -eq 0 ]
+            then
+              echo "The head of the incoming PR is ${parent2}"
+              echo "INCOMING_PR_HEAD_COMMIT=${parent2}" >> "${GITHUB_ENV}"
+            else
+              echo "The incoming push isn't a merge, ergo it's not a PR"
+            fi
           fi
 
       - name: Set up Docker
@@ -110,7 +117,7 @@ jobs:
         shell: bash
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_TAG: "pr-${{ github.event.before }}-${{ env.INCOMING_PR_HEAD_COMMIT }}"
+          PR_TAG: "pr-${{ env.BASE_SHA }}-${{ env.INCOMING_PR_HEAD_COMMIT }}"
         run: |
           repo="${{ github.repository }}"
           repo_lower="${repo,,}"
@@ -137,7 +144,7 @@ jobs:
             # so we find the last commit that github processed before this one
             # which will have gone through the same retagging process
             # and use that sha as our key to find the Docker container related to that commit
-            old_tag=$(echo "${all_tags}" | grep "^sha-${{ github.event.before }}-.*\$") # .* is actual or retag
+            old_tag=$(echo "${all_tags}" | grep "^sha-${{ env.BASE_SHA }}-.*\$") # .* is actual or retag
 
             echo "OLD_TAG=${old_tag}" >> "${GITHUB_ENV}"
             echo "SUFFIX=retag" >> "${GITHUB_ENV}"
