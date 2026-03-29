@@ -1,4 +1,10 @@
 <!-- header goes here -->
+## [2.4.2](https://github.com/kristof-mattei/rust-testbench/compare/v2.4.1..v2.4.2) - 2026-03-29
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Release v2.4.2
+- Log when force bumping by @kristof-mattei ([`a7b038e`](https://github.com/kristof-mattei/rust-testbench/commit/a7b038e41657a02d8204376980f159e950f0195a))
 ## [2.4.1](https://github.com/kristof-mattei/rust-testbench/compare/v2.4.0..v2.4.1) - 2026-03-29
 
 ### 🐛 Bug Fixes
@@ -10,7 +16,7 @@
 ### ⚙️ Miscellaneous Tasks
 
 - *(build)* Switch to annotations by @kristof-mattei ([`c041c69`](https://github.com/kristof-mattei/rust-testbench/commit/c041c6948bd7f7318ad320659d8233d416bcbd6a))
-- *(release)* Release v2.4.1
+- *(release)* Release v2.4.1 by @github-actions[bot] ([`c6a37cf`](https://github.com/kristof-mattei/rust-testbench/commit/c6a37cf99651716748486ad15e72b0326f33023e))
 - Skip more when releasing by @kristof-mattei ([`762a3bc`](https://github.com/kristof-mattei/rust-testbench/commit/762a3bcfe9b2c625e41b5020939e9bcdb3fb8815))
 - Lowercase variables by @kristof-mattei ([`dff26ac`](https://github.com/kristof-mattei/rust-testbench/commit/dff26ac37a1826cf3b57c9c848aba1a9de9e5d67))
 - Lowercase variables & path hygiene by @kristof-mattei ([`668015d`](https://github.com/kristof-mattei/rust-testbench/commit/668015dbabaf3cf2f2480896ed7737e4b8f7490c))
