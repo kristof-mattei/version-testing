@@ -1,4 +1,10 @@
 <!-- header goes here -->
+## [2.5.1](https://github.com/kristof-mattei/rust-testbench/compare/v2.5.0..v2.5.1) - 2026-03-29
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Release v2.5.1
+- Bump by @kristof-mattei ([`2c74df6`](https://github.com/kristof-mattei/rust-testbench/commit/2c74df624ba6a456ddc4f4940fbd844bd4f70bff))
 ## [2.5.0](https://github.com/kristof-mattei/rust-testbench/compare/v2.4.2..v2.5.0) - 2026-03-29
 
 ### 🚀 Features
@@ -7,7 +13,7 @@
 
 ### ⚙️ Miscellaneous Tasks
 
-- *(release)* Release v2.5.0
+- *(release)* Release v2.5.0 by @github-actions[bot] ([`9c548f2`](https://github.com/kristof-mattei/rust-testbench/commit/9c548f2be9108dc3787e8f36b29c02ea9c0012c2))
 - Don't run machete on push by @kristof-mattei ([`f6bdbd8`](https://github.com/kristof-mattei/rust-testbench/commit/f6bdbd887606edbc9ed3a52615afe69de39ed220))
 - If no component bumps, bump patch by @kristof-mattei ([`fd4eca7`](https://github.com/kristof-mattei/rust-testbench/commit/fd4eca7deceb7d644a16cb69879411090ed9e599))
 - Add labels to the image too by @kristof-mattei ([`ba1cd05`](https://github.com/kristof-mattei/rust-testbench/commit/ba1cd0507337529bdf19dbd8da2bd78014f79ced))
