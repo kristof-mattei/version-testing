@@ -137,6 +137,7 @@ jobs:
           # so we never tag a Docker image with the same version as the last release.
           if [ "${bumped}" = "${latest_tag}" ]; then
             bumped=$(git-cliff --bumped-version --bump patch --unreleased --github-token ${{ secrets.GITHUB_TOKEN }})
+            echo "Force bumping to ${bumped}"
           fi
 
           # remove v

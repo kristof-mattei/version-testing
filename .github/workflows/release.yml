@@ -74,6 +74,7 @@ jobs:
           if [ "${bumped}" = "${latest_tag}" ]; then
             bump_flag="patch"
             bumped=$(git-cliff --bumped-version --bump patch --unreleased --github-token ${{ secrets.GITHUB_TOKEN }})
+            echo "Force bumping to ${bumped}"
           fi
 
           version="${bumped}"
