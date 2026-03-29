@@ -1,4 +1,43 @@
 <!-- header goes here -->
+## [2.4.1](https://github.com/kristof-mattei/rust-testbench/compare/v2.4.0..v2.4.1) - 2026-03-29
+
+### 🐛 Bug Fixes
+
+- Embed the calculated version in the image label, not the PR it came from by @kristof-mattei ([`654a96c`](https://github.com/kristof-mattei/rust-testbench/commit/654a96c34a4b33e89f2b6eecc443d8097b5cd1c2))
+- Use wildcard to load crates by @kristof-mattei ([`4e69b0d`](https://github.com/kristof-mattei/rust-testbench/commit/4e69b0d2a8cc6d7cc498fc434f413db618614034))
+- Use skopeo to copy the image, as buildx wrapped the image in an OCI image index by @kristof-mattei ([`7c179a2`](https://github.com/kristof-mattei/rust-testbench/commit/7c179a2ac1aeda46e08cb54383d904aed5dc5c8b))
+
+### ⚙️ Miscellaneous Tasks
+
+- *(build)* Switch to annotations by @kristof-mattei ([`c041c69`](https://github.com/kristof-mattei/rust-testbench/commit/c041c6948bd7f7318ad320659d8233d416bcbd6a))
+- *(release)* Release v2.4.1
+- Skip more when releasing by @kristof-mattei ([`762a3bc`](https://github.com/kristof-mattei/rust-testbench/commit/762a3bcfe9b2c625e41b5020939e9bcdb3fb8815))
+- Lowercase variables by @kristof-mattei ([`dff26ac`](https://github.com/kristof-mattei/rust-testbench/commit/dff26ac37a1826cf3b57c9c848aba1a9de9e5d67))
+- Lowercase variables & path hygiene by @kristof-mattei ([`668015d`](https://github.com/kristof-mattei/rust-testbench/commit/668015dbabaf3cf2f2480896ed7737e4b8f7490c))
+- Disable formatting on push to main, different array syntax by @kristof-mattei ([`c1d61b0`](https://github.com/kristof-mattei/rust-testbench/commit/c1d61b06948c3bde697272a21bd27c66d0cb5fd8))
+- Better docker caching by @kristof-mattei ([`29fa47e`](https://github.com/kristof-mattei/rust-testbench/commit/29fa47eefe2fa1e959fae78ad129609c016dea3d))
+- Use same [] syntax everywhere for yaml by @kristof-mattei ([`a90eeff`](https://github.com/kristof-mattei/rust-testbench/commit/a90eefffd10960f09c14efb2200161ef2663f6d2))
+- Move / add mold by @kristof-mattei ([`639f3a5`](https://github.com/kristof-mattei/rust-testbench/commit/639f3a50a697763fc25b8e0c4934a16ad8e83cd6))
+- Improve caching by @kristof-mattei ([`6841817`](https://github.com/kristof-mattei/rust-testbench/commit/6841817ca0e5927b21745c8608c9e2a972ea92fc))
+- Test by @kristof-mattei ([`222103f`](https://github.com/kristof-mattei/rust-testbench/commit/222103f074c48ae8645cb5ae37c4fed4fcea447d))
+- Remove test by @kristof-mattei ([`c73b6d6`](https://github.com/kristof-mattei/rust-testbench/commit/c73b6d6d7181b52e65b4e94f37bbde8ddeabac74))
+- Not needed by @kristof-mattei ([`e92df85`](https://github.com/kristof-mattei/rust-testbench/commit/e92df85de4a37e42e9774e6f983c27ebdf09b3c2))
+- Remove suprious newline by @kristof-mattei ([`be7faa7`](https://github.com/kristof-mattei/rust-testbench/commit/be7faa7228268d8f0b97fdb7348ac2a552e3c6c6))
+- Sort by @kristof-mattei ([`a8b16ab`](https://github.com/kristof-mattei/rust-testbench/commit/a8b16abc3b307557d1728ff6a5d6f8f217498382))
+- Move build cache by @kristof-mattei ([`0b7ecda`](https://github.com/kristof-mattei/rust-testbench/commit/0b7ecdad13f6f94ff24b161797e5ef56271f231b))
+- Change by @kristof-mattei ([`1e29335`](https://github.com/kristof-mattei/rust-testbench/commit/1e293354b5b951b1273fd4e346bbe3ad39a77c32))
+- Move build cache by @kristof-mattei ([`0ab1328`](https://github.com/kristof-mattei/rust-testbench/commit/0ab1328687c12bf15ae3e21bb031a2d38632c4c8))
+- Rename by @kristof-mattei ([`6544b67`](https://github.com/kristof-mattei/rust-testbench/commit/6544b67f89b757a1a86986291fd1efef42f07445))
+- Stop skopeo from trying to infer type by @kristof-mattei ([`66ca282`](https://github.com/kristof-mattei/rust-testbench/commit/66ca282f0a4adcd2a4ee63f8ad69c9c822ac88ac))
+- Ensure we copy all layers by @kristof-mattei ([`6428eb8`](https://github.com/kristof-mattei/rust-testbench/commit/6428eb84930a25d7c8d4fda31d0f32dc4ad55f9f))
+- Also run build & spellcheck once merged, this warms up the cache for subsequent builds by @kristof-mattei ([`e6db1ca`](https://github.com/kristof-mattei/rust-testbench/commit/e6db1ca9fa9b6353c81e9c3870a31fdde32303ce))
+- Speed up spellcheck compilation with sccache by @kristof-mattei ([`5e53dcd`](https://github.com/kristof-mattei/rust-testbench/commit/5e53dcd877309fafb5cf123c5a39697ccd2f47d7))
+- Enable sccache for spellcheck by @kristof-mattei ([`d99fa01`](https://github.com/kristof-mattei/rust-testbench/commit/d99fa01ce7d28befefea7882be13557a9d9ffc24))
+- Remove cache cargo for spellcheck, as it doesn't do anything by @kristof-mattei ([`565017e`](https://github.com/kristof-mattei/rust-testbench/commit/565017e04b68ad7de0efad32f98ba111041d773a))
+- Use a spellcheck fork for quicker installation by @kristof-mattei ([`93bfd69`](https://github.com/kristof-mattei/rust-testbench/commit/93bfd695bd0a871fbdb10a269b4d266194303729))
+- No need to do spellcheck on push anymore, as we use pre-built binaries by @kristof-mattei ([`afa2005`](https://github.com/kristof-mattei/rust-testbench/commit/afa2005227a8ac9fb078efe5abf6f9cad8f52c37))
+- Convert manifest to index annotations by @kristof-mattei ([`affcb0a`](https://github.com/kristof-mattei/rust-testbench/commit/affcb0a26c6f809ad3d355a997a62075ed22b827))
+- Always patch by @kristof-mattei ([`1dfe3ee`](https://github.com/kristof-mattei/rust-testbench/commit/1dfe3ee9cf61e35bf7c84a444b96b016b1dd0af4))
 ## [2.4.0](https://github.com/kristof-mattei/rust-testbench/compare/v2.3.0..v2.4.0) - 2026-03-12
 
 ### 🚀 Features
@@ -8,7 +47,7 @@
 
 ### ⚙️ Miscellaneous Tasks
 
-- *(release)* Release v2.4.0
+- *(release)* Release v2.4.0 by @github-actions[bot] ([`7389b12`](https://github.com/kristof-mattei/rust-testbench/commit/7389b12905ccc58345640ffdd9329ed5ecd5bc95))
 - Use trixie as dev image by @kristof-mattei ([`caa35f4`](https://github.com/kristof-mattei/rust-testbench/commit/caa35f407f67a6bf86e45f83735ec9a5d31df207))
 - Devcontainer mold by @kristof-mattei ([`d4a14c0`](https://github.com/kristof-mattei/rust-testbench/commit/d4a14c05f92ed61bad93d07ce0ab095b282d0111))
 - Codeql must be done by @kristof-mattei ([`4c7c987`](https://github.com/kristof-mattei/rust-testbench/commit/4c7c98730008af1914e5fd335ff1e0af887214fa))
