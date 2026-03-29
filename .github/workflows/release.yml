@@ -59,7 +59,7 @@ jobs:
           git config --global user.name github-actions[bot]
           git config --global user.email 41898282+github-actions[bot]@users.noreply.github.com
 
-          latest_tag=$(git describe --tags --abbrev=0)
+          latest_tag=$(git describe --tags --abbrev=0 || true)
 
           if [ -z "$(git log "${latest_tag}..HEAD" --oneline)" ]; then
             echo "No commits since ${latest_tag}. Nothing to release."
