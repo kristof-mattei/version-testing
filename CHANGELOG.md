@@ -1,9 +1,21 @@
 <!-- header goes here -->
+## [2.5.0](https://github.com/kristof-mattei/rust-testbench/compare/v2.4.2..v2.5.0) - 2026-03-29
+
+### 🚀 Features
+
+- Push to docker as well by @kristof-mattei ([`45a3067`](https://github.com/kristof-mattei/rust-testbench/commit/45a30677a28dc849cef409e303f84546bf2acbd3))
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Release v2.5.0
+- Don't run machete on push by @kristof-mattei ([`f6bdbd8`](https://github.com/kristof-mattei/rust-testbench/commit/f6bdbd887606edbc9ed3a52615afe69de39ed220))
+- If no component bumps, bump patch by @kristof-mattei ([`fd4eca7`](https://github.com/kristof-mattei/rust-testbench/commit/fd4eca7deceb7d644a16cb69879411090ed9e599))
+- Add labels to the image too by @kristof-mattei ([`ba1cd05`](https://github.com/kristof-mattei/rust-testbench/commit/ba1cd0507337529bdf19dbd8da2bd78014f79ced))
 ## [2.4.2](https://github.com/kristof-mattei/rust-testbench/compare/v2.4.1..v2.4.2) - 2026-03-29
 
 ### ⚙️ Miscellaneous Tasks
 
-- *(release)* Release v2.4.2
+- *(release)* Release v2.4.2 by @github-actions[bot] ([`494322a`](https://github.com/kristof-mattei/rust-testbench/commit/494322a1c29763a43ade348fcb08afc91a34b30e))
 - Log when force bumping by @kristof-mattei ([`a7b038e`](https://github.com/kristof-mattei/rust-testbench/commit/a7b038e41657a02d8204376980f159e950f0195a))
 ## [2.4.1](https://github.com/kristof-mattei/rust-testbench/compare/v2.4.0..v2.4.1) - 2026-03-29
 
