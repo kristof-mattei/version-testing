@@ -3,7 +3,7 @@
 
 [remote.github]
 owner = "kristof-mattei"
-repo = "rust-testbench"
+repo = "rust-seed"
 
 [changelog]
 # A Tera template to be rendered as the changelog's header.
@@ -22,7 +22,7 @@ body = """
     - {% if commit.scope %}*({{ commit.scope }})* {% endif %}\
         {% if commit.breaking %}[**breaking**] {% endif %}\
         {{ commit.message | split(pat="\n") | first | trim | upper_first }}\
-        {% if commit.remote.username %} by @{{ commit.remote.username }}{%- endif %}\
+        {% if commit.remote.username %} by [@{{ commit.remote.username }}](https://github.com/{{ commit.remote.username }}){%- endif %}\
         {% if commit.remote.pr_number %} in #{{ commit.remote.pr_number }}{%- endif %}\
         {% if commit.id %} ([`{{ commit.id | truncate(length=7, end="") }}`]({{ self::remote_url() }}/commit/{{ commit.id }})){%- endif %}\
 {% endmacro -%}
@@ -64,7 +64,7 @@ render_always = true
 # An array of regex based postprocessors to modify the changelog.
 postprocessors = [
     # Replace the placeholder `<REPO>` with a URL.
-    { pattern = '<REPO>', replace = "https://github.com/kristof-mattei/rust-testbench" }, # replace repository URL
+    { pattern = '<REPO>', replace = "https://github.com/kristof-mattei/rust-seed" }, # replace repository URL
 ]
 # render body even when there are no releases to process
 # render_always = true
