@@ -1,4 +1,16 @@
 <!-- header goes here -->
+## [2.7.1](https://github.com/kristof-mattei/rust-testbench/compare/v2.7.0..v2.7.1) - 2026-03-31
+
+### 🐛 Bug Fixes
+
+- Allow recover from failed publish by [@kristof-mattei](https://github.com/kristof-mattei) ([`8679429`](https://github.com/kristof-mattei/rust-testbench/commit/86794293706458a898773f80715952df76c2838a))
+- Correct how git-cliff renders username by [@kristof-mattei](https://github.com/kristof-mattei) ([`6a112ec`](https://github.com/kristof-mattei/rust-testbench/commit/6a112ecb345dd262cef7fda119e4709b3a9149b0))
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Release v2.7.1
+- Prepare doesn't need the cache & toolchain by [@kristof-mattei](https://github.com/kristof-mattei) ([`a255daf`](https://github.com/kristof-mattei/rust-testbench/commit/a255daf9066d8a79c834e73fee97a89c7d32b1a2))
+- Render username link by [@kristof-mattei](https://github.com/kristof-mattei) ([`0614196`](https://github.com/kristof-mattei/rust-testbench/commit/06141967877eda99120ee6cc9d50b1a37a865acb))
 ## [2.7.0](https://github.com/kristof-mattei/rust-testbench/compare/v2.6.0..v2.7.0) - 2026-03-31
 
 ### 🚀 Features
@@ -8,7 +20,7 @@
 
 ### ⚙️ Miscellaneous Tasks
 
-- *(release)* Release v2.7.0
+- *(release)* Release v2.7.0 by [@github-actions[bot]](https://github.com/github-actions[bot]) ([`c1b28ef`](https://github.com/kristof-mattei/rust-testbench/commit/c1b28ef0c3db8762b9c9a0df6aaa193897377993))
 ## [2.6.0](https://github.com/kristof-mattei/rust-testbench/compare/v2.5.1..v2.6.0) - 2026-03-31
 
 ### 🚀 Features
