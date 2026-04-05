@@ -22,7 +22,9 @@ concurrency:
   cancel-in-progress: false # no we need them
 
 permissions:
+  attestations: write
   contents: write
+  id-token: write
   packages: write
 
 env:
@@ -177,6 +179,13 @@ jobs:
           tags: |
             type=edge,branch=main
 
+      - name: Get image digest
+        shell: bash
+        id: digest
+        run: |
+          digest=$(docker buildx imagetools inspect "${FULL_IMAGE_NAME}:${OLD_TAG}" --format "{{json .}}" | jq --raw-output ".manifest.digest")
+          echo "digest=${digest}" >> "${GITHUB_OUTPUT}"
+
       - name: Actually re-tag the container
         shell: bash
         run: |
@@ -184,6 +193,13 @@ jobs:
             do
               docker buildx imagetools create --tag "${new_tag}" "${FULL_IMAGE_NAME}:${OLD_TAG}"
           done
+
+      - name: Attest GHCR image
+        uses: actions/attest@59d89421af93a897026c735860bf21b6eb4f7b26 # v4.1.0
+        with:
+          subject-name: ${{ env.FULL_IMAGE_NAME }}
+          subject-digest: ${{ steps.digest.outputs.digest }}
+          push-to-registry: true
 
       - name: Copy the container to Docker Hub
         if: env.DOCKERHUB_IMAGE_NAME != ''
@@ -193,3 +209,11 @@ jobs:
             do
               docker buildx imagetools create --tag "${new_tag}" "${FULL_IMAGE_NAME}:${OLD_TAG}"
           done
+
+      - name: Attest Docker Hub image
+        if: env.DOCKERHUB_IMAGE_NAME != ''
+        uses: actions/attest@59d89421af93a897026c735860bf21b6eb4f7b26 # v4.1.0
+        with:
+          subject-name: ${{ env.FULL_DOCKERHUB_IMAGE_NAME }}
+          subject-digest: ${{ steps.digest.outputs.digest }}
+          push-to-registry: true
