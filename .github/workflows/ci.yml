@@ -478,21 +478,9 @@ jobs:
         run: |
           source="docker://${{ needs.docker-prepare-variables.outputs.full_image_name_local_registry }}:${{ needs.docker-prepare-variables.outputs.unique_tag }}"
 
-          additional_tags=()
-          first_tag=""
           while IFS= read -r tag; do
-            if [ -z "${first_tag}" ]; then
-              first_tag="${tag}"
-            else
-              additional_tags+=(--additional-tag "${tag}")
-            fi
+            skopeo copy --all --preserve-digests --src-tls-verify=false --command-timeout 70s --retry-times 5 "${source}" "docker://${tag}"
           done <<< "${{ steps.meta.outputs.tags }}"
-
-          until timeout --kill-after=70 60 skopeo copy --all --preserve-digests "${additional_tags[@]}" "${source}" "docker://${first_tag}"; do
-            echo "Timeout exceeded / command failed, trying again..."
-
-            sleep 2
-          done
 
       - name: Inspect new remote tags
         shell: bash
@@ -500,11 +488,7 @@ jobs:
           while IFS= read -r new_tag; do
             echo "Inspecting ${new_tag}:"
 
-            until timeout --kill-after=70 60 docker buildx imagetools inspect --raw "${new_tag}"; do
-              echo "Timeout exceeded / command failed, trying again..."
-
-              sleep 2
-            done
+            skopeo inspect --raw --command-timeout 70s --retry-times 5 "docker://${new_tag}"
 
             # empty to get newline
             echo ""
