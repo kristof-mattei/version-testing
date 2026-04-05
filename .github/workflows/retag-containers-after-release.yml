@@ -159,11 +159,20 @@ jobs:
           subject-digest: ${{ steps.digest.outputs.digest }}
           push-to-registry: true
 
-      - name: Docker Scout Quickview
+      - name: Docker Scout Quickview (linux/amd64)
         uses: docker/scout-action@8910519cee8ac046f3ee99686b0dc6654d5ba1a7 # v1.20.3
         with:
           command: quickview
           image: "${{ env.FULL_IMAGE_NAME }}@${{ steps.digest.outputs.digest }}"
           platform: linux/amd64
+          dockerhub-user: ${{ secrets.DOCKERHUB_USERNAME }}
+          dockerhub-password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Docker Scout Quickview (linux/arm64)
+        uses: docker/scout-action@8910519cee8ac046f3ee99686b0dc6654d5ba1a7 # v1.20.3
+        with:
+          command: quickview
+          image: "${{ env.FULL_IMAGE_NAME }}@${{ steps.digest.outputs.digest }}"
+          platform: linux/arm64
           dockerhub-user: ${{ secrets.DOCKERHUB_USERNAME }}
           dockerhub-password: ${{ secrets.DOCKERHUB_TOKEN }}
