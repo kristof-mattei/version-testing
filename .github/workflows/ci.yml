@@ -478,13 +478,21 @@ jobs:
         run: |
           source="docker://${{ needs.docker-prepare-variables.outputs.full_image_name_local_registry }}:${{ needs.docker-prepare-variables.outputs.unique_tag }}"
 
+          additional_tags=()
+          first_tag=""
           while IFS= read -r tag; do
-            until timeout --kill-after=70 60 skopeo copy --all "${source}" "docker://${tag}"; do
-              echo "Timeout exceeded / command failed, trying again..."
-
-              sleep 2
-            done
+            if [ -z "${first_tag}" ]; then
+              first_tag="${tag}"
+            else
+              additional_tags+=(--additional-tag "${tag}")
+            fi
           done <<< "${{ steps.meta.outputs.tags }}"
+
+          until timeout --kill-after=70 60 skopeo copy --all --preserve-digests "${additional_tags[@]}" "${source}" "docker://${first_tag}"; do
+            echo "Timeout exceeded / command failed, trying again..."
+
+            sleep 2
+          done
 
       - name: Inspect new remote tags
         shell: bash
