@@ -1,4 +1,19 @@
 <!-- header goes here -->
+## [2.8.1](https://github.com/kristof-mattei/rust-testbench/compare/v2.8.0..v2.8.1) - 2026-04-05
+
+### 🐛 Bug Fixes
+
+- We can now release without having ANY tags on the repo by [@kristof-mattei](https://github.com/kristof-mattei) ([`80cbc44`](https://github.com/kristof-mattei/rust-testbench/commit/80cbc44189bf721637640dbf7257f852ca82f877))
+
+### ⚙️ Miscellaneous Tasks
+
+- *(ci)* Upload edge to docker.io by [@kristof-mattei](https://github.com/kristof-mattei) ([`f235bac`](https://github.com/kristof-mattei/rust-testbench/commit/f235bac7e7bf720a4c42711f12fa57cb361c6adf))
+- *(ci)* Reattest every stage by [@kristof-mattei](https://github.com/kristof-mattei) ([`19c7f04`](https://github.com/kristof-mattei/rust-testbench/commit/19c7f048fad6474f798c9d810dbe1d2278731d6d))
+- *(ci)* Use skopeo wherever possible by [@kristof-mattei](https://github.com/kristof-mattei) ([`50a6786`](https://github.com/kristof-mattei/rust-testbench/commit/50a678665fd200021293e938c0b493891077a5ef))
+- *(ci)* Scout for visualizing cves etc by [@kristof-mattei](https://github.com/kristof-mattei) ([`2fe6e06`](https://github.com/kristof-mattei/rust-testbench/commit/2fe6e06ada42423eeacec95be6a29ccbd3806068))
+- *(ci)* Username is not secret by [@kristof-mattei](https://github.com/kristof-mattei) ([`7d168f4`](https://github.com/kristof-mattei/rust-testbench/commit/7d168f446d7bbdabaf2bd58c2818af2a65b07c41))
+- *(release)* Release v2.8.1
+- Fix fmt by [@kristof-mattei](https://github.com/kristof-mattei) ([`1c63af5`](https://github.com/kristof-mattei/rust-testbench/commit/1c63af585079ee98e0b241fc6683c31982159106))
 ## [2.8.0](https://github.com/kristof-mattei/rust-testbench/compare/v2.7.1..v2.8.0) - 2026-04-05
 
 ### 🚀 Features
@@ -23,7 +38,7 @@
 ### ⚙️ Miscellaneous Tasks
 
 - *(ci)* When configured, images pushed to docker are also attested by [@kristof-mattei](https://github.com/kristof-mattei) ([`86e48b0`](https://github.com/kristof-mattei/rust-testbench/commit/86e48b0650979de5e300b706e244f6f4f4eb140f))
-- *(release)* Release v2.8.0
+- *(release)* Release v2.8.0 by [@github-actions[bot]](https://github.com/github-actions[bot]) ([`590e66d`](https://github.com/kristof-mattei/rust-testbench/commit/590e66d0e30a16ef771bcf244ea335fce6285a6a))
 - Render username link by [@kristof-mattei](https://github.com/kristof-mattei) ([`19debe7`](https://github.com/kristof-mattei/rust-testbench/commit/19debe713ec00dc8f6534a65bab8f1f9ef5dccec))
 - Sort tags by creation time by [@kristof-mattei](https://github.com/kristof-mattei) ([`39ce04b`](https://github.com/kristof-mattei/rust-testbench/commit/39ce04bd2b02ef17d869c2828bf3e641854a25b1))
 - No clue by [@kristof-mattei](https://github.com/kristof-mattei) ([`957b274`](https://github.com/kristof-mattei/rust-testbench/commit/957b274761bdb85f404cb0b28048d3fa7de019c8))
