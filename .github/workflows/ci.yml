@@ -542,6 +542,16 @@ jobs:
           subject-digest: ${{ needs.docker-publish.outputs.digest }}
           push-to-registry: true
 
+      - name: Docker Scout Compare
+        uses: docker/scout-action@8910519cee8ac046f3ee99686b0dc6654d5ba1a7 # v1.20.3
+        with:
+          command: compare
+          image: "${{ needs.docker-prepare-variables.outputs.full_image_name_remote_registry }}:${{ needs.docker-prepare-variables.outputs.unique_tag }}"
+          platform: linux/amd64
+          to-latest: true
+          dockerhub-user: ${{ secrets.DOCKERHUB_USERNAME }}
+          dockerhub-password: ${{ secrets.DOCKERHUB_TOKEN }}
+
   all-done:
     name: All done
     # this is the job that should be marked as required on GitHub. It's the only one that'll reliably trigger
