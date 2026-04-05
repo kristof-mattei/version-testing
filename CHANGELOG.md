@@ -1,4 +1,33 @@
 <!-- header goes here -->
+## [2.8.0](https://github.com/kristof-mattei/rust-testbench/compare/v2.7.1..v2.8.0) - 2026-04-05
+
+### 🚀 Features
+
+- Also upload edge images by [@kristof-mattei](https://github.com/kristof-mattei) ([`cb1571d`](https://github.com/kristof-mattei/rust-testbench/commit/cb1571df7ce2b92f99cc5fb6e0b9a5ebb6fe228d))
+- Use skopeo to copy, which doesn't recreate digest by [@kristof-mattei](https://github.com/kristof-mattei) ([`95965d7`](https://github.com/kristof-mattei/rust-testbench/commit/95965d7a12ce10234bf3876e9841b4e9a4836fc2))
+- Use skopeo to copy, which doesn't recreate digest by [@kristof-mattei](https://github.com/kristof-mattei) ([`9335e5a`](https://github.com/kristof-mattei/rust-testbench/commit/9335e5a5299fa9d8b2d88d9bbf6b9cd41cd7d32d))
+- Preserve digest, copy --all instead of copy tag by tag by [@kristof-mattei](https://github.com/kristof-mattei) ([`2a46e98`](https://github.com/kristof-mattei/rust-testbench/commit/2a46e98aa90d4de262994dcbe9198f3293208e55))
+- Yea by [@kristof-mattei](https://github.com/kristof-mattei) ([`beabcdf`](https://github.com/kristof-mattei/rust-testbench/commit/beabcdf0ca80f474ed8e1647f3e7e7c5ac7355fd))
+- Quickview-compare by [@kristof-mattei](https://github.com/kristof-mattei) ([`9ef98bc`](https://github.com/kristof-mattei/rust-testbench/commit/9ef98bc61dfa795903c6d0b9e01b7aa6a8df02c2))
+- Quickview-compare by [@kristof-mattei](https://github.com/kristof-mattei) ([`f86a0bb`](https://github.com/kristof-mattei/rust-testbench/commit/f86a0bb15f75d94af979731a617e30ae9d564e30))
+- Quickview-compare by [@kristof-mattei](https://github.com/kristof-mattei) ([`985c39e`](https://github.com/kristof-mattei/rust-testbench/commit/985c39e0c2d496106b5974fce7b92762047ada9f))
+- Quickview by [@kristof-mattei](https://github.com/kristof-mattei) ([`c638218`](https://github.com/kristof-mattei/rust-testbench/commit/c63821841ce26fb34ecbfee772fa76a23c91fe55))
+- Quickview & cves, continue on failure if it's a FROM scratch image by [@kristof-mattei](https://github.com/kristof-mattei) ([`a3c39eb`](https://github.com/kristof-mattei/rust-testbench/commit/a3c39eb57bfb1de92253c406fe7d6d0f478d938e))
+- Remove quickview by [@kristof-mattei](https://github.com/kristof-mattei) ([`c4b2db7`](https://github.com/kristof-mattei/rust-testbench/commit/c4b2db79faffedb4f8c31b5c601fb7dc83826e54))
+- Compare release image by [@kristof-mattei](https://github.com/kristof-mattei) ([`0b45c4b`](https://github.com/kristof-mattei/rust-testbench/commit/0b45c4bbe353c59396017374cad117d5c76d7795))
+
+### 🐛 Bug Fixes
+
+- Allow recover from failed publish by [@kristof-mattei](https://github.com/kristof-mattei) ([`4a6232d`](https://github.com/kristof-mattei/rust-testbench/commit/4a6232df706f61d1ea6bd7e74262ed468bf8d2aa))
+
+### ⚙️ Miscellaneous Tasks
+
+- *(ci)* When configured, images pushed to docker are also attested by [@kristof-mattei](https://github.com/kristof-mattei) ([`86e48b0`](https://github.com/kristof-mattei/rust-testbench/commit/86e48b0650979de5e300b706e244f6f4f4eb140f))
+- *(release)* Release v2.8.0
+- Render username link by [@kristof-mattei](https://github.com/kristof-mattei) ([`19debe7`](https://github.com/kristof-mattei/rust-testbench/commit/19debe713ec00dc8f6534a65bab8f1f9ef5dccec))
+- Sort tags by creation time by [@kristof-mattei](https://github.com/kristof-mattei) ([`39ce04b`](https://github.com/kristof-mattei/rust-testbench/commit/39ce04bd2b02ef17d869c2828bf3e641854a25b1))
+- No clue by [@kristof-mattei](https://github.com/kristof-mattei) ([`957b274`](https://github.com/kristof-mattei/rust-testbench/commit/957b274761bdb85f404cb0b28048d3fa7de019c8))
+- Reduce for testing by [@kristof-mattei](https://github.com/kristof-mattei) ([`05739eb`](https://github.com/kristof-mattei/rust-testbench/commit/05739ebe16c018e08efb91ba207a903c40ce6a78))
 ## [2.7.1](https://github.com/kristof-mattei/rust-testbench/compare/v2.7.0..v2.7.1) - 2026-03-31
 
 ### 🐛 Bug Fixes
@@ -8,7 +37,7 @@
 
 ### ⚙️ Miscellaneous Tasks
 
-- *(release)* Release v2.7.1
+- *(release)* Release v2.7.1 by [@github-actions[bot]](https://github.com/github-actions[bot]) ([`055500e`](https://github.com/kristof-mattei/rust-testbench/commit/055500e18b71e0f17366fa9438085b6558eadcb3))
 - Prepare doesn't need the cache & toolchain by [@kristof-mattei](https://github.com/kristof-mattei) ([`a255daf`](https://github.com/kristof-mattei/rust-testbench/commit/a255daf9066d8a79c834e73fee97a89c7d32b1a2))
 - Render username link by [@kristof-mattei](https://github.com/kristof-mattei) ([`0614196`](https://github.com/kristof-mattei/rust-testbench/commit/06141967877eda99120ee6cc9d50b1a37a865acb))
 ## [2.7.0](https://github.com/kristof-mattei/rust-testbench/compare/v2.6.0..v2.7.0) - 2026-03-31
