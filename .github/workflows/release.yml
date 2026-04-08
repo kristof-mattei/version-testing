@@ -68,6 +68,9 @@ jobs:
 
           bump_flag="auto"
           bumped=$(git-cliff --bumped-version --bump ${bump_flag} --unreleased --github-token ${{ secrets.GITHUB_TOKEN }})
+          echo "latest_tag=${latest_tag}"
+          echo "bump_flag=${bump_flag}"
+          echo "bumped=${bumped}"
 
           # If git-cliff didn't bump (e.g. chore/ci only commits), force a patch increment
           # so we never release the same version as the last tag.
@@ -81,13 +84,16 @@ jobs:
 
           # Strip any pre-release suffix git-cliff may have picked up (keep only vX.Y.Z)
           [[ "$version" =~ ^(v[0-9]+\.[0-9]+\.[0-9]+) ]] && version="${BASH_REMATCH[1]}"
+          echo "version=${version}"
           echo "version=$version" >> "${GITHUB_OUTPUT}"
 
           prerelease="${{ inputs.prerelease }}"
+          echo "prerelease=${prerelease}"
 
           if [ "${prerelease}" != "none" ]; then
             # Determine the next pre-release number by finding the highest existing tag with this suffix
             latest_pre=$(git tag --list "${version}-${prerelease}.*" | sort --field-separator . --key 4 --numeric-sort | tail -1)
+            echo "latest_pre=${latest_pre}"
 
             if [ -n "$latest_pre" ]; then
               pre_number=$(( ${latest_pre##*-${prerelease}.} + 1 ))
@@ -95,14 +101,17 @@ jobs:
               pre_number=1
             fi
 
+            echo "pre_number=${pre_number}"
             release_version="${version}-${prerelease}.${pre_number}"
           else
             release_version="${version}"
           fi
 
+          echo "release_version=${release_version}"
           echo "release_version=$release_version" >> "${GITHUB_OUTPUT}"
 
           branch="release/${release_version}"
+          echo "branch=${branch}"
           echo "branch=$branch" >> "${GITHUB_OUTPUT}"
 
           # Create or reset the branch to current main
@@ -113,7 +122,9 @@ jobs:
           fi
 
           commit_message="chore(release): Release ${release_version}"
+          echo "commit_message=${commit_message}"
 
+          echo "Running: git-cliff --output CHANGELOG.md --bump ${bump_flag} --tag ${release_version} --with-commit ${commit_message}"
           git-cliff --output CHANGELOG.md --bump ${bump_flag} --tag "${release_version}" --with-commit "${commit_message}" --github-token ${{ secrets.GITHUB_TOKEN }}
 
           git add CHANGELOG.md
