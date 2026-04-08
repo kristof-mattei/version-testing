@@ -11,9 +11,9 @@ on:
         default: none
         options:
           - none
-          # - alpha
-          # - beta
-          # - rc
+          - alpha
+          - beta
+          - rc
 
 concurrency:
   group: "${{ github.workflow }}"
