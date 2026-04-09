@@ -107,7 +107,7 @@ jobs:
             for i in "${!pre_types[@]}"; do
               if [ "$i" -gt "$requested_index" ]; then
                 if git tag --list "${version}-${pre_types[$i]}.*" | grep -q .; then
-                  echo "Cannot create ${prerelease} pre-release: ${pre_types[$i]} pre-release already exists for ${version}."
+                  echo "::error::Cannot create ${prerelease} pre-release: ${pre_types[$i]} pre-release already exists for ${version}."
                   exit 1
                 fi
               fi
