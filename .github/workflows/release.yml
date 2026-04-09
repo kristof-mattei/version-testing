@@ -124,8 +124,8 @@ jobs:
           commit_message="chore(release): Release ${release_version}"
           echo "commit_message=${commit_message}"
 
-          echo "Running: git-cliff --output CHANGELOG.md --bump ${bump_flag} --tag ${release_version} --with-commit ${commit_message}"
-          git-cliff --output CHANGELOG.md --bump ${bump_flag} --tag "${release_version}" --with-commit "${commit_message}" --github-token ${{ secrets.GITHUB_TOKEN }}
+          echo "Running: git-cliff --output CHANGELOG.md --bump ${bump_flag} --tag ${release_version}"
+          git-cliff --output CHANGELOG.md --bump ${bump_flag} --tag "${release_version}" --github-token ${{ secrets.GITHUB_TOKEN }}
 
           git add CHANGELOG.md
 
