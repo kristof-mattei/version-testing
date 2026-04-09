@@ -1,4 +1,10 @@
 <!-- header goes here -->
+## [0.2.0-beta.1](https://github.com/kristof-mattei/version-testing/compare/v0.2.0-alpha.1..v0.2.0-beta.1) - 2026-04-09
+
+### 🚀 Features
+
+- More pre-release testing by [@kristof-mattei](https://github.com/kristof-mattei) ([`75ec24b`](https://github.com/kristof-mattei/version-testing/commit/75ec24b89d8d7e001e264e0e288fb28c7e84ffcf))
+- More pre-release testing by [@kristof-mattei](https://github.com/kristof-mattei) ([`8fc2e9b`](https://github.com/kristof-mattei/version-testing/commit/8fc2e9b5d1ed56979ed906d23c03b2a39d6dfd67))
 ## [0.2.0-alpha.1](https://github.com/kristof-mattei/version-testing/compare/v0.1.0..v0.2.0-alpha.1) - 2026-04-09
 
 ### 🚀 Features
