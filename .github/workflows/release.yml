@@ -16,7 +16,7 @@ on:
           - rc
 
 concurrency:
-  group: "${{ github.workflow }}"
+  group: "${{ github.workflow }}-${{ inputs.prerelease }}"
   cancel-in-progress: true # only last step is important, which runs or doesn't
 
 permissions:
