@@ -92,6 +92,27 @@ jobs:
           echo "prerelease=${prerelease}"
 
           if [ "${prerelease}" != "none" ]; then
+            # Pre-release types in ascending order
+            pre_types=("alpha" "beta" "rc")
+
+            # Find the index of the requested pre-release type
+            requested_index=-1
+            for i in "${!pre_types[@]}"; do
+              if [ "${pre_types[$i]}" = "${prerelease}" ]; then
+                requested_index=$i
+              fi
+            done
+
+            # Check if a higher-tier pre-release already exists for this base version
+            for i in "${!pre_types[@]}"; do
+              if [ "$i" -gt "$requested_index" ]; then
+                if git tag --list "${version}-${pre_types[$i]}.*" | grep -q .; then
+                  echo "Cannot create ${prerelease} pre-release: ${pre_types[$i]} pre-release already exists for ${version}."
+                  exit 1
+                fi
+              fi
+            done
+
             # Determine the next pre-release number by finding the highest existing tag with this suffix
             latest_pre=$(git tag --list "${version}-${prerelease}.*" | sort --field-separator . --key 4 --numeric-sort | tail -1)
             echo "latest_pre=${latest_pre}"
