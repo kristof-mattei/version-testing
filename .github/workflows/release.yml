@@ -121,7 +121,7 @@ jobs:
             git checkout -b "${branch}"
           fi
 
-          commit_message="chore(release): Release ${release_version}"
+          commit_message="chore(release): prepare for ${release_version}"
           echo "commit_message=${commit_message}"
 
           echo "Running: git-cliff --output CHANGELOG.md --bump ${bump_flag} --tag ${release_version}"
