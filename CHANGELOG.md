@@ -1,4 +1,13 @@
 <!-- header goes here -->
+## [0.1.0](https://github.com/kristof-mattei/rust-testbench/compare/v0.0.1..v0.1.0) - 2026-04-09
+
+### 🚀 Features
+
+- Feat ([`e292867`](https://github.com/kristof-mattei/rust-testbench/commit/e29286704ed10c1db08475cae30c0c0f4a5ad8fa))
+- More pre-release testing ([`6d61a87`](https://github.com/kristof-mattei/rust-testbench/commit/6d61a8704dbae83c4c55396665d42977e2721f30))
+- More pre-release testing ([`5de73fa`](https://github.com/kristof-mattei/rust-testbench/commit/5de73fab6916a9128bcb8ec32957ab5403d6ca66))
+- More pre-release testing ([`007425a`](https://github.com/kristof-mattei/rust-testbench/commit/007425a4d66eb35231f843b6655f02e685561d75))
+- More pre-release testing ([`79c618f`](https://github.com/kristof-mattei/rust-testbench/commit/79c618f91705dde18bdb6a57ebcc543bed293c2c))
 ## [0.0.1] - 2026-04-08
 
 ### 🚀 Features
@@ -83,6 +92,7 @@
 - Quickview & cves, continue on failure if it's a FROM scratch image by [@kristof-mattei](https://github.com/kristof-mattei) ([`a3c39eb`](https://github.com/kristof-mattei/rust-testbench/commit/a3c39eb57bfb1de92253c406fe7d6d0f478d938e))
 - Remove quickview by [@kristof-mattei](https://github.com/kristof-mattei) ([`c4b2db7`](https://github.com/kristof-mattei/rust-testbench/commit/c4b2db79faffedb4f8c31b5c601fb7dc83826e54))
 - Compare release image by [@kristof-mattei](https://github.com/kristof-mattei) ([`0b45c4b`](https://github.com/kristof-mattei/rust-testbench/commit/0b45c4bbe353c59396017374cad117d5c76d7795))
+- Feat ([`1dd97f4`](https://github.com/kristof-mattei/rust-testbench/commit/1dd97f4f070afc935d2dc07c1a1081d734461771))
 
 ### 🐛 Bug Fixes
 
@@ -513,7 +523,7 @@
 - *(release)* Release v2.7.1 by [@github-actions[bot]](https://github.com/github-actions[bot]) ([`055500e`](https://github.com/kristof-mattei/rust-testbench/commit/055500e18b71e0f17366fa9438085b6558eadcb3))
 - *(release)* Release v2.8.0 by [@github-actions[bot]](https://github.com/github-actions[bot]) ([`590e66d`](https://github.com/kristof-mattei/rust-testbench/commit/590e66d0e30a16ef771bcf244ea335fce6285a6a))
 - *(release)* Release v2.8.1 by [@github-actions[bot]](https://github.com/github-actions[bot]) ([`5e18021`](https://github.com/kristof-mattei/rust-testbench/commit/5e18021f4cee4139287e28cb9a8f97d8b41c74be))
-- *(release)* Release v0.0.1
+- *(release)* Release v0.0.1 ([`a7fab57`](https://github.com/kristof-mattei/rust-testbench/commit/a7fab57843cbff6c86b80b3872ae9c955ddb440d))
 - *(version)* V1.2.0 by [@invalid-email-address](https://github.com/invalid-email-address) ([`1dbbec6`](https://github.com/kristof-mattei/rust-testbench/commit/1dbbec608864c5cb559a90d8904996011daef52c))
 - *(version)* V1.3.0 by [@invalid-email-address](https://github.com/invalid-email-address) ([`bee1b83`](https://github.com/kristof-mattei/rust-testbench/commit/bee1b83e6cfe1afd6286073fc1bb38787c0ba48e))
 - *(version)* V1.3.1 by [@invalid-email-address](https://github.com/invalid-email-address) ([`096c422`](https://github.com/kristof-mattei/rust-testbench/commit/096c4229799cecace867a1de699a7f65eefe59bb))
