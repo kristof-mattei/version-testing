@@ -61,7 +61,9 @@ jobs:
 
           latest_tag=$(git describe --tags --abbrev=0 || true)
 
-          if [ -n "${latest_tag}" ] && [ -z "$(git log "${latest_tag}..HEAD" --oneline)" ]; then
+          prerelease="${{ inputs.prerelease }}"
+
+          if [ -n "${latest_tag}" ] && [ -z "$(git log "${latest_tag}..HEAD" --oneline)" ] && [ "${prerelease}" = "none" ]; then
             echo "No commits since ${latest_tag}. Nothing to release."
             exit 1
           fi
@@ -87,7 +89,6 @@ jobs:
           echo "version=${version}"
           echo "version=$version" >> "${GITHUB_OUTPUT}"
 
-          prerelease="${{ inputs.prerelease }}"
           echo "prerelease=${prerelease}"
 
           if [ "${prerelease}" != "none" ]; then
