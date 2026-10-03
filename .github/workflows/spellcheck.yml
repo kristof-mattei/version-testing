@@ -77,7 +77,7 @@ jobs:
           fi
 
       - name: Set up binstall
-        uses: cargo-bins/cargo-binstall@a29e25869a42756b3be062dc4dae3e4b01bb4f38 # v1.25.0
+        uses: cargo-bins/cargo-binstall@7bebc2e59eb8820162b7ac8f62a92bfdb2732447 # v1.25.1
 
       - name: Install custom cargo-spellcheck
         run: |
